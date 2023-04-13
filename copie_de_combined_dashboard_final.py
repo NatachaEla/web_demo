@@ -18,6 +18,7 @@ df = pd.read_csv("G:/My Drive/M2/T2/Data Viz/Flight Prediction DataSet/Clean_Dat
 df.head(5)
 """
 
+import pandas as pd
 df = pd.read_csv("https://raw.githubusercontent.com/NatachaEla/data_viz_web/main/Clean_Dataset_lon_lat.csv")
 #!pip install plotly
 
