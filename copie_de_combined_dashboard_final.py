@@ -24,11 +24,15 @@ df = pd.read_csv("https://raw.githubusercontent.com/NatachaEla/data_viz_web/main
 
 #!pip install panel
 
+from dash import Dash, dcc, html, Input, Output
 import pandas as pd
 import numpy as np
 import panel as pn
 import plotly.express as px
 pn.extension('plotly')
+
+app = Dash(__name__)
+server = app.server
 
 # Define the interactive widgets
 class_filter = pn.widgets.MultiSelect(options=['All'] + df['class'].unique().tolist(), name='Filter by Class', value=['All'])
@@ -230,3 +234,9 @@ departure_time = pn.Column(
 # Show the dashboard
 departure_time.servable()
 
+
+@app.callback(Output("departure_time", "figure"),
+              Input("widgets_row", "value"))
+
+if __name__ == "__main__":
+    app.run_server(debug=False)
