@@ -238,5 +238,4 @@ departure_time.servable();
 @app.callback(Output("departure_time", "figure"),
               Input("widgets_row", "value"))
 
-if __name__ == "__main__":
-    app.run_server(debug=True)
+
